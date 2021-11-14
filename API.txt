@@ -1,0 +1,10 @@
+# By geographic coordinates:
+
+https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=8c119af7e118aa113ea04c2ad8d834cf&units=metric&lang=ru
+
+
+# By city name:
+
+https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid=8c119af7e118aa113ea04c2ad8d834cf&units=metric&lang=ru
+
+

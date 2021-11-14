@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Constantine-Khoroshilov">
+
+    <title>Погода</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    
+    <script src="main.js"></script>
+
+  </head>
+  <body>
+
+    <div id="app"></div>
+
+    <noscript>
+      <p>
+        <b>Ошибка:</b> 
+        В настройках Вашего браузера выключен JavaScript, или же он вовсе не
+        поддерживается им. Возможно, что-то препятствует загрузке веб-приложения.
+      </p>
+    </noscript>
+
+    <script>
+
+      let app;
+
+      function startApp(userLocation) {
+        app = Elm.Main.init({
+          node: document.getElementById('app'),
+          flags: userLocation
+        });
+      }
+
+      navigator.geolocation.getCurrentPosition(position => {
+        startApp({ 
+          lat: position.coords.latitude, 
+          lon: position.coords.longitude 
+        })
+      }, error => {
+        startApp(null)
+      });
+
+    </script>
+
+  </body>
+</html>
